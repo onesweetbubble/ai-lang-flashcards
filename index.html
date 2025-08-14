@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Language Flashcards</h1>
+    <div id="flashcard" class="flashcard">
+      <img id="wordImage" src="" alt="Word Image" class="word-image">
+      <p id="word">Press Next to start</p>
+      <input id="inputField" type="text" placeholder="Type the word here">
+      <button onclick="checkAnswer()">Check</button>
+      <button onclick="startRecording()">🎤 Speak</button>
+      <p id="feedback"></p>
+    </div>
+    <button onclick="nextCard()">Next</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
