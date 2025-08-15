@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ру">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +41,10 @@
         <ul id="history-correct" class="chips" aria-label="Список верных ответов"></ul>
       </div>
       <div class="history-col">
+        <h3>Повторение <span id="count-review">0</span></h3>
+        <ul id="history-review" class="chips" aria-label="Список повторения"></ul>
+      </div>
+      <div class="history-col">
         <h3>Неверно <span id="count-wrong">0</span></h3>
         <ul id="history-wrong" class="chips" aria-label="Список неверных ответов"></ul>
       </div>
@@ -73,6 +77,28 @@
   <footer class="app-footer">
     <small>Статический демо-сайт</small>
   </footer>
+
+  <div id="result-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="result-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <h2 id="result-title">Результаты</h2>
+      <div class="result-flex">
+        <div id="result-star" class="star" style="--fill-scale: 0;"></div>
+        <table class="result-table" aria-label="Итоги">
+          <tbody>
+            <tr><th>Всего карточек</th><td id="res-total">0</td></tr>
+            <tr><th>Верно</th><td id="res-correct">0</td></tr>
+            <tr><th>Повторение</th><td id="res-review">0</td></tr>
+            <tr><th>Точность</th><td id="res-accuracy">0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-actions">
+        <button id="btn-again" class="btn btn-primary">Сыграть снова</button>
+        <button id="btn-close" class="btn">Закрыть</button>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
