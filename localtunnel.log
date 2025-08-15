@@ -4,3 +4,15 @@ Fri Aug 15 2025 12:25:08 GMT+0000 (Coordinated Universal Time) GET /
 Fri Aug 15 2025 12:38:54 GMT+0000 (Coordinated Universal Time) HEAD /style.css
 Fri Aug 15 2025 12:38:58 GMT+0000 (Coordinated Universal Time) HEAD /app.js
 Fri Aug 15 2025 12:40:32 GMT+0000 (Coordinated Universal Time) HEAD /
+/home/ubuntu/.npm/_npx/75ac80b86e83d4a2/node_modules/localtunnel/bin/lt.js:81
+    throw err;
+    ^
+
+Error: connection refused: localtunnel.me:5389 (check your firewall settings)
+    at Socket.<anonymous> (/home/ubuntu/.npm/_npx/75ac80b86e83d4a2/node_modules/localtunnel/lib/TunnelCluster.js:52:11)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.16.0
