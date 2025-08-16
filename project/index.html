@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Галерея</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Галерея изображений</h1>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Настройки">
+      <div class="control-row">
+        <label for="cycle-size">Карточек в цикле: <output id="cycle-size-value">5</output></label>
+        <input type="range" id="cycle-size" min="4" max="10" value="5" aria-label="Количество карточек в цикле">
+        <button id="btn-restart" class="btn">Начать заново</button>
+      </div>
+    </section>
+
+    <div id="status" class="status">Загрузка…</div>
+
+    <section class="card-area" id="card-area" aria-live="polite">
+      <div class="card">
+        <img id="card-image" alt="" src="" loading="eager">
+      </div>
+      <div class="answer-row">
+        <input id="answer-input" type="text" placeholder="Что на карточке?" autocomplete="off" inputmode="text">
+        <button id="btn-mic" class="btn btn-icon" aria-label="Голосовой ввод" title="Голосовой ввод">🎤</button>
+        <button id="btn-check" class="btn btn-primary">Проверить</button>
+      </div>
+      <div id="progress" class="progress" aria-live="polite"></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="history" aria-label="Результаты">
+      <div class="history-col">
+        <h3>Верно <span id="count-correct">0</span></h3>
+        <ul id="history-correct" class="chips" aria-label="Список верных ответов"></ul>
+      </div>
+      <div class="history-col">
+        <h3>Повторение <span id="count-review">0</span></h3>
+        <ul id="history-review" class="chips" aria-label="Список повторения"></ul>
+      </div>
+      <div class="history-col">
+        <h3>Неверно <span id="count-wrong">0</span></h3>
+        <ul id="history-wrong" class="chips" aria-label="Список неверных ответов"></ul>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery" style="display:none">
+      <figure>
+        <img src="images/apple.jpg" alt="Apple" loading="lazy">
+        <figcaption>Apple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/dog.jpg" alt="Dog" loading="lazy">
+        <figcaption>Dog</figcaption>
+      </figure>
+      <figure>
+        <img src="images/car.jpg" alt="Car" loading="lazy">
+        <figcaption>Car</figcaption>
+      </figure>
+      <figure>
+        <img src="images/book.jpg" alt="Book" loading="lazy">
+        <figcaption>Book</figcaption>
+      </figure>
+      <figure>
+        <img src="images/cat.jpg" alt="Cat" loading="lazy">
+        <figcaption>Cat</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Статический демо-сайт</small>
+  </footer>
+
+  <div id="result-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="result-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <h2 id="result-title">Результаты</h2>
+      <div class="result-flex">
+        <div id="result-star" class="star" style="--fill-scale: 0;"></div>
+        <table class="result-table" aria-label="Итоги">
+          <tbody>
+            <tr><th>Всего карточек</th><td id="res-total">0</td></tr>
+            <tr><th>Верно</th><td id="res-correct">0</td></tr>
+            <tr><th>Повторение</th><td id="res-review">0</td></tr>
+            <tr><th>Точность</th><td id="res-accuracy">0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-actions">
+        <button id="btn-again" class="btn btn-primary">Сыграть снова</button>
+        <button id="btn-close" class="btn">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
